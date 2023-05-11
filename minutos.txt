@@ -1,1 +1,1 @@
-# construccion de controladores min 6.40
+# construccion de controladores min 10.40

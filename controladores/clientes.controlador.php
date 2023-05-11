@@ -10,7 +10,7 @@ class ControladorClientes{
     public function create(){
         $json = array(
                 
-            'detalle'=>'Estoy en el registro'
+            'detalle'=>'Registro guardado'
             
         );
         

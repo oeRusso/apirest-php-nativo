@@ -24,28 +24,36 @@ if (count(array_filter($arrayRutas)) == 0) {
         // Cuando se hacen peticiones desde registro
 
         if (array_filter($arrayRutas)[1] == 'registro') {
+            
+                 /*===============================
+                     Peticiones de tipo POST 
+                  ===============================*/
 
             if (isset($_SERVER['REQUEST_METHOD']) && $_SERVER['REQUEST_METHOD'] == 'POST') {
-                   
+ 
                 $registro = new ControladorClientes();
 
                 $registro->create();
             }
             
-            }
+        }
 
             // Cuando se hacen peticiones desde cursos
 
         if (array_filter($arrayRutas)[1] == 'cursos') {
-            $json = array(
-        
-                'detalle'=>'Estoy en el cursos'
-                
-            );
+           
+            /*===============================
+                Peticiones de tipo GET 
+            ===============================*/
+            if (isset($_SERVER['REQUEST_METHOD']) && $_SERVER['REQUEST_METHOD'] == 'GET') {
+ 
+                $cursos = new ControladorCursos();
+
+                $cursos->index();
+            }
             
-            echo json_encode($json, true); 
-            
-            return;
+
+
         }
 
      }else{
