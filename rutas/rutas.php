@@ -24,15 +24,14 @@ if (count(array_filter($arrayRutas)) == 0) {
         // Cuando se hacen peticiones desde registro
 
         if (array_filter($arrayRutas)[1] == 'registro') {
-                $json = array(
+
+            if (isset($_SERVER['REQUEST_METHOD']) && $_SERVER['REQUEST_METHOD'] == 'POST') {
+                   
+                $registro = new ControladorClientes();
+
+                $registro->create();
+            }
             
-                    'detalle'=>'Estoy en el registro'
-                    
-                );
-                
-                echo json_encode($json, true);   
-                
-                return;
             }
 
             // Cuando se hacen peticiones desde cursos
