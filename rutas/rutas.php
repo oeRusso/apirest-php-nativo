@@ -53,22 +53,41 @@ if (count(array_filter($arrayRutas)) == 0) {
             }
             
 
+            /*===============================
+                Peticiones de tipo POST 
+            ===============================*/
+            if (isset($_SERVER['REQUEST_METHOD']) && $_SERVER['REQUEST_METHOD'] == 'POST') {
+ 
+                $crearcursos = new ControladorCursos();
 
+                $crearcursos->create();
+            }
+            
         }
 
      }else{
          // cuando se hacen peticiones de un solo curso
          if (array_filter($arrayRutas)[1] == 'cursos' && is_numeric(array_filter($arrayRutas)[2])) { 
-    
-             $json = array(
-         
-                 'detalle'=>'Estoy en UN solo curso'
-                 
-             );
-             
-             echo json_encode($json, true);  
-    
-             return;
+
+            /*===============================
+            Peticiones de tipo GET 
+            ===============================*/
+            if (isset($_SERVER['REQUEST_METHOD']) && $_SERVER['REQUEST_METHOD'] == 'GET') {
+                $editarcursos = new ControladorCursos();
+
+                $editarcursos->show(array_filter($arrayRutas)[2]);
+
+               }
+
+            /*===============================
+            Peticiones de tipo PUT 
+            ===============================*/
+            if (isset($_SERVER['REQUEST_METHOD']) && $_SERVER['REQUEST_METHOD'] == 'PUT') {
+                $editarcursos = new ControladorCursos();
+
+                $editarcursos->update(array_filter($arrayRutas)[2]);
+
+               }
          }
      }
 
