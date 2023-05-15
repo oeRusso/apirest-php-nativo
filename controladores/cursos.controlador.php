@@ -66,4 +66,20 @@ class ControladorCursos{
         return;
     }
 
+    /*===============================
+        Eliminar un curso  
+    ===============================*/
+
+    public function delete($id){
+        $json = array(
+                
+            'detalle'=>'Se ha borrado un curso con id '.$id
+            
+        );
+        
+        echo json_encode($json, true);   
+        
+        return;
+    }
+
 }

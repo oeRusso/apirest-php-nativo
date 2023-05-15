@@ -1,1 +1,1 @@
-# construccion de controladores min 10.40
+# conexion a la base de datos min 1

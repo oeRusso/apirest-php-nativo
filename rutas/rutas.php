@@ -8,7 +8,7 @@ $arrayRutas = explode("/",$_SERVER['REQUEST_URI']);
 if (count(array_filter($arrayRutas)) == 0) {
     
 
-    // Cuando no se hace ninguna peicion a la api
+    // Cuando no se hace ninguna peticion a la api
     $json = array(
     
         'detalle'=>'no encontrado'
@@ -73,9 +73,9 @@ if (count(array_filter($arrayRutas)) == 0) {
             Peticiones de tipo GET 
             ===============================*/
             if (isset($_SERVER['REQUEST_METHOD']) && $_SERVER['REQUEST_METHOD'] == 'GET') {
-                $editarcursos = new ControladorCursos();
+                $mostrarCurso = new ControladorCursos();
 
-                $editarcursos->show(array_filter($arrayRutas)[2]);
+                $mostrarCurso->show(array_filter($arrayRutas)[2]);
 
                }
 
@@ -83,9 +83,19 @@ if (count(array_filter($arrayRutas)) == 0) {
             Peticiones de tipo PUT 
             ===============================*/
             if (isset($_SERVER['REQUEST_METHOD']) && $_SERVER['REQUEST_METHOD'] == 'PUT') {
-                $editarcursos = new ControladorCursos();
+                $editarCurso = new ControladorCursos();
 
-                $editarcursos->update(array_filter($arrayRutas)[2]);
+                $editarCurso->update(array_filter($arrayRutas)[2]);
+
+               }
+
+            /*===============================
+            Peticiones de tipo DELETE 
+            ===============================*/
+            if (isset($_SERVER['REQUEST_METHOD']) && $_SERVER['REQUEST_METHOD'] == 'DELETE') {
+                $eliminarCurso = new ControladorCursos();
+
+                $eliminarCurso->delete(array_filter($arrayRutas)[2]);
 
                }
          }
