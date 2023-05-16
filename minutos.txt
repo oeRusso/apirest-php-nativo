@@ -1,1 +1,1 @@
-# conexion a la base de datos min 1
+# construccion de modelos min 0.40
