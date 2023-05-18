@@ -7,6 +7,9 @@ class ControladorCursos{
     ===============================*/
 
     public function index(){
+
+        $cursos = ModeloCursos::index('cursos');
+        
         $json = array(
                 
             'detalle'=>'Mostrando todos los cursos'
