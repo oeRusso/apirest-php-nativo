@@ -11,8 +11,10 @@ class ControladorCursos{
         $cursos = ModeloCursos::index('cursos');
         
         $json = array(
-                
-            'detalle'=>'Mostrando todos los cursos'
+
+            'status'=>200,
+            'total_registros'=>count($cursos),
+            'detalle'=>$cursos
             
         );
         

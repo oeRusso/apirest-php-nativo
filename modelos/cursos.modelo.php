@@ -14,7 +14,7 @@ class ModeloCursos{
         $stmt = Conexion::conectar()->prepare("SELECT * FROM $tabla");
         $stmt ->execute();
 
-        return $stmt->fetchAll();
+        return $stmt->fetchAll(PDO::FETCH_CLASS);
 
     }
 }
