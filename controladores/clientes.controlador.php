@@ -7,7 +7,14 @@ class ControladorClientes{
     // Crear un registro
 
 
-    public function create(){
+    public function create($datos){
+
+
+        echo '<pre>'; print_r($datos); echo '</pre>';
+        
+        return;
+
+
         $json = array(
                 
             'detalle'=>'Registro guardado'

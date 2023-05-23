@@ -30,10 +30,17 @@ if (count(array_filter($arrayRutas)) == 0) {
                   ===============================*/
 
             if (isset($_SERVER['REQUEST_METHOD']) && $_SERVER['REQUEST_METHOD'] == 'POST') {
- 
+
+                /*===============================
+                 Capturando los datos
+                ===============================*/
+                $datos = array('nombre' => $_POST['nombre'],
+                               'apellido' => $_POST['apellido'],
+                               'email' => $_POST['email']);
+
                 $registro = new ControladorClientes();
 
-                $registro->create();
+                $registro->create($datos);
             }
             
         }
