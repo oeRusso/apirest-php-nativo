@@ -5,6 +5,7 @@
         "borrado",
         "Capturando",
         "Clientes",
+        "coloca",
         "conectar",
         "Conexion",
         "Controlador",
@@ -41,6 +42,8 @@
         "registros",
         "Rutas",
         "tipo",
-        "todos"
+        "todos",
+        "Validar",
+        "valido"
     ]
 }
