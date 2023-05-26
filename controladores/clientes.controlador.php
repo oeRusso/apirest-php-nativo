@@ -60,6 +60,27 @@ class ControladorClientes{
             return;
         } 
 
+        /*=======================================
+          Validar que el email no este repetido
+         ========================================*/
+
+         $clientes = ModeloCliente::index('clientes');
+         
+         foreach ($clientes as $key => $value) {
+            if ($value['email'] == $datos['email']) {
+                $json = array(
+                    'status'=>404,
+                    'detalle'=>'El registro ya existe en la base de datos'
+                    
+                );
+                
+                echo json_encode($json, true);   
+                
+                return;
+                
+            }
+         }
+
 
         $json = array(
                 
